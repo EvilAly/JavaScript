@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 6 - Coding Challenge</title>
+  </head>
+  <body>
+    <!--
+    Step 1:
+      - Make sure speedTrap.js is in the same directory as this file
+      - Use a <script> tag to import the file here
+    --> <script src="speedTrap.js"></script>
+      <script>
+    
+      /**
+       * Step 2:
+       *
+       *  Capture the return of your speedTrap function here, then use it to test a few speeds (and check the console for your output)
+       *
+       * E.g. If the speed limit I set in speedTrap() was 55 with an 8 MPH "fudge factor", and I named my speedTrap() return value "test", my output should look like this:
+       *
+       * test(55) --> "everything's okay" message logged
+       * test(60) --> "just a warning" warning logged
+       * test(64) --> "you're speeding!" error logged
+       */
+      
+      for (let speed = 0; speed < 3; speed++) {
+        let speeding = speedTrap();
+        let howFast = (55 + (speed * 5))
+        speeding(howFast);
+      }
+      
+    </script>
+  </body>
+</html>

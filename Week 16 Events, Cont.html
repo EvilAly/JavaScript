@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 16 - Coding Challenge</title>
+    <!-- prettier-ignore-start -->
+    <style>body{background-color:#f2f2f2;color:#363636;font-family:Helvetica,sans-serif;line-height:1.5}.container{margin:30px auto;padding:2rem;max-width:700px;text-align:center;background-color:#fff;-webkit-box-shadow:0 4px 20px rgba(0,0,0,.05);box-shadow:0 4px 20px rgba(0,0,0,.05);border-radius:5px}.container :last-child{margin-bottom:0}.color-display{margin:30px auto 0;width:300px;height:300px;border:1px solid #000}ol{text-align:left}p{margin-bottom:2em}.details{text-align:left}hr{margin:32px 0}code{font-size:1.1em;padding:.2em .4em;background-color:#eee;border:1px solid #ccc}.message.cloned{font-weight:bold;color:darkorange;}.listener{position:relative;max-width:300px;height:300px;border:5px dashed;margin:30px auto;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}.listener.part-1.effect-active::before{transform:translateY(0%)}.listener.part-1::before{content:'';position:absolute;left:0;top:0;width:100%;height:100%;transform:translateY(101%);background-color:#417505;transition:transform 0.5s ease-in-out}.part-2-success{display:none;}.part-2-success.triggered{display:inline}.part-2-default.triggered{display:none}.part-2-status{padding:1rem;background-color:#e8e8e8;border:1px solid #a8a8a8}.dom-status{color:green;font-weight:bold;font-size:1.5rem;}</style>
+    <!-- prettier-ignore-end -->
+  </head>
+  <body>
+    <div class="container">
+      <h1>Week 16: Events, continued</h1>
+
+      <h2>Part 1</h2>
+
+      <p>Your challenge is to make the square box below fill with a green overlay when you hover over it, but disappear again when you move your mouse away.</p>
+
+      <ol>
+        <li>select the box element, saving it to a variable</li>
+        <li>on the <code>mouseover</code> event, add the class <code>effect-active</code>, but do not modify or remove any other classes or properties of this element.</li>
+        <li>on the <code>mouseout</code> event, remove the class <code>effect-active</code>, again not modifying or removing any other classes or properties of this element.</li>
+      </ol>
+
+      <div class='listener part-1'>Hover Here</div>
+    
+      <hr>
+
+      <h2>Part 2</h2>
+
+      <p>For this part, your challenge is to make the text below change via adding a CSS class when you press the <code>g</code> key (but <em>only</em> the <code>g</code> key!).</p>
+
+      <ol>
+        <li>select both <code>&lt;span&gt;</code> elements in the paragraph below, saving each to their own variable</li>
+        <li>listen for the <code>g</code> key to be pressed (you can use any of the three keyboard events for this)</li>
+        <li>add the class <code>triggered</code> to the <code>.part-2-default</code> element</li>
+        <li>add the class <code>triggered</code> to the <code>.part-2-success</code> element</li>
+      </ol>
+
+      <p><em>HINT:</em> to figure out the key code of the <code>g</code> key, log the Event object of the key press to the console and see what value it provides under <code>keyCode</code>.</p>
+
+      <p class='part-2-status'>
+        <span class='part-2-default'>What letter comes after F and before H?</span>
+        <span class='part-2-success'><em>Correct!</em><br> That's right, G</span>
+      </p>
+
+      <hr>
+
+      <h2>Part 3</h2>
+
+      <p>For your <em>final programming challenge for this course (!!!)</em>, you will change the text in the paragraph below when the DOM has loaded.</p>
+
+      <ol>
+        <li>select the paragraph below and save it to a variable</li>
+        <li>create a listener for the <code>DOMContentLoaded</code> event</li>
+        <li>inside the handler for this listener, set the text for the paragraph below to read, "The DOM is ready"</li>
+      </ol>
+
+      <p class='dom-status'></p>
+    </div>
+    <script>
+      // Part 1 code here…
+      let partOne = document.querySelector(".listener.part-1");
+      partOne.addEventListener("mouseover", hovered, false);
+      partOne.addEventListener("mouseout", hoveredOut, false);
+
+      function hovered(e) {
+        partOne.classList.add("effect-active");
+      }
+
+      function hoveredOut(e) {
+        partOne.classList.remove("effect-active");
+      }      
+
+      // Part 2 code here…
+      let partTwoD = document.querySelector('.part-2-default');
+      let partTwoS = document.querySelector('.part-2-success');
+
+      document.addEventListener("keydown", addClass, false);
+      
+
+      function addClass(e) {
+        if (e.keyCode == 71) {
+          partTwoD.classList.add("triggered");
+          partTwoS.classList.add("triggered");
+        }
+      }  
+      
+
+      // Part 3 code here…
+      let partThree = document.querySelector('.dom-status');
+
+      document.addEventListener("DOMContentLoaded", addText, false);
+
+      function addText(e) {
+        partThree.textContent = ("The DOM is ready");
+      }
+
+
+      
+    </script>
+  </body>
+</html>

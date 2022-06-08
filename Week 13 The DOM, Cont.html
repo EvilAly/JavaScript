@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 13 - Coding Challenge</title>
+  <!-- prettier-ignore-start -->
+  <style>
+    body {
+      background-color: #f2f2f2;
+      color: #363636;
+      font-family: Helvetica, sans-serif;
+      line-height: 1.5
+    }
+
+    .container {
+      margin: 30px auto;
+      padding: 2rem;
+      max-width: 700px;
+      text-align: center;
+      background-color: #fff;
+      -webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, .05);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, .05);
+      border-radius: 5px
+    }
+
+    .container :last-child {
+      margin-bottom: 0
+    }
+
+    .color-display {
+      margin: 30px auto 0;
+      width: 300px;
+      height: 300px;
+      border: 1px solid #000
+    }
+
+    ol {
+      text-align: left
+    }
+
+    p {
+      margin-bottom: 2em
+    }
+
+    .data-table {
+      width: 100%;
+      text-align: left
+    }
+
+    .details {
+      text-align: left
+    }
+
+    hr {
+      margin: 32px 0
+    }
+
+    code {
+      font-size: 1.1em;
+      padding: .2em .4em;
+      background-color: #eee;
+      border: 1px solid #ccc
+    }
+
+    @-webkit-keyframes fade-in {
+      from {
+        opacity: 0
+      }
+
+      to: {
+        opacity: 1
+      }
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0
+      }
+
+      to: {
+        opacity: 1
+      }
+    }
+
+    .part-1 {
+      display: -ms-grid;
+      display: grid;
+      justify-items: center;
+      -ms-grid-rows: auto;
+      -ms-grid-columns: 1fr 1rem 1fr 1rem 1fr 1rem 1fr;
+      grid-template: auto/repeat(4, 1fr);
+      grid-gap: 1rem
+    }
+
+    .part-1 .target {
+      width: 5rem;
+      height: 5rem;
+      background-color: #444;
+      border-radius: 50%
+    }
+
+    .part-1 .target.cloned {
+      -webkit-animation: fade-in 1s ease-in-out forwards;
+      animation: fade-in 1s ease-in-out forwards;
+      background-color: green;
+    }
+
+    .part-2 .message#part-2-done {
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+  <!-- prettier-ignore-end -->
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Week 13: The DOM, Continued</h1>
+
+    <p>This week we've learned a lot more about DOM manipulation. In this week's assignment, we'll put into practice a
+      few of the new things we've learned.</p>
+    <p>Follow the steps of parts 1 and 2 to complete this assignment.</p>
+
+    <h2>Part 1:</h2>
+    <ol class="details">
+      <li>Select the <code>.target</code> element below and save it as a variable.</li>
+      <li>Clone this element, assigning the new clone to a variable</li>
+      <li>Use classList to add the class <code>cloned</code> to the cloned element (but not the original element!)</li>
+      <li>Select the <code>.part-1</code> element below and save it to a variable</li>
+      <li>Append the cloned element 7 times to your saved <code>.part-1</code> element (making it a sibling of the
+        original <code>.target</code> div). Do not just write 7 copies of your code - use a loop.<br>When you're done,
+        there should be a 4-column grid of 8 circles - one gray and seven green.</li>
+    </ol>
+
+    <p class="details"><em>HINT:</em> You'll need to clone the original <code>.target</code> element and set its class
+      <em>inside</em> the loop, not before. If you try to clone an element once and repeatedly add it to the DOM, it
+      won't work! You need a new clone for each addition.</p>
+
+    <div class="part-1">
+      <div class="target"></div>
+    </div>
+
+    <hr>
+
+    <h2>Part 2:</h2>
+    <ol>
+      <li>Create a <strong>new &lt;span&gt; element</strong> and assign it to a variable</li>
+      <li>Use classList to add the class <code>message</code> and the ID <code>part-2-done</code> to it</li>
+      <li>Set its text to read, "All done"</li>
+      <li>Select the <code>.part-2</code> element below and save it to a variable</li>
+      <li>Append your new element to the <code>.part-2</code> element</li>
+    </ol>
+
+    <p class="details"><em>HINT:</em> If the text you added isn't bold and green, something's wrong!</p>
+
+    <div class="part-2"></div>
+  </div>
+
+  <script>
+    // Part 1 code here…
+    let partOne = document.querySelector(".target");
+    let addHere = document.querySelector(".part-1");
+
+    for (let i=0; i<7; i++){
+      let double = partOne.cloneNode(true);
+      double.classList.add("cloned");
+      addHere.appendChild(double);
+    }
+
+      // Part 2 code here…
+      let newElem = document.createElement("span");
+      newElem.classList.add("message");
+      newElem.setAttribute('id', 'part-2-done');
+            
+      newElem.textContent = "All done";
+
+      let addTo = document.querySelector(".part-2");
+      addTo.append(newElem);
+      
+
+
+  </script>
+</body>
+
+</html>

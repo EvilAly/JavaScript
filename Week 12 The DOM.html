@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 12 - Coding Challenge</title>
+  <!-- prettier-ignore-start -->
+  <style>
+    body {
+      background-color: #f2f2f2;
+      color: #363636;
+      font-family: Helvetica, sans-serif;
+      line-height: 1.5
+    }
+
+    .container {
+      margin: 30px auto;
+      padding: 2rem;
+      max-width: 700px;
+      text-align: center;
+      background-color: #fff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, .05);
+      border-radius: 5px
+    }
+
+    .container :last-child {
+      margin-bottom: 0
+    }
+
+    .color-display {
+      margin: 30px auto 0;
+      width: 300px;
+      height: 300px;
+      border: 1px solid #000
+    }
+
+    ol {
+      text-align: left
+    }
+
+    p {
+      margin-bottom: 2em
+    }
+
+    .data-table {
+      width: 100%;
+      text-align: left
+    }
+
+    .details {
+      text-align: left
+    }
+
+    .test-1.success {
+      color: green;
+      font-weight: 700
+    }
+
+    .success:not(.test-1) {
+      color: red
+    }
+  </style>
+  <!-- prettier-ignore-end -->
+</head>
+
+<body>
+  <div class="container">
+    <h1>Week 12: The DOM</h1>
+    <p>By writing your JavaScript in the &lt;script&gt; element at the end of this document, follow these steps to
+      complete the assignment:</p>
+    <ol>
+      <li class="test-1">Use this &lt;li&gt; element's class to select it, then add the class "success". Do <em>not</em>
+        remove the "test-1" class that's already there. This text will turn bold and green when you're done.</li>
+      <li>A URL to a photo of green mountains is hidden within the &lt;img&gt; element in this step. Write JavaScript to
+        get that value, using the image's class to select it. Store the URL in a variable, then set the image's "src"
+        attribute to it. When complete, you'll see the photo below:
+        <figure>
+          <img class="vacation-photo" data-src="https://picsum.photos/id/1018/320/220" alt="Green mountains">
+        </figure>
+      </li>
+      <li class="status-message">
+        Change the text in the following &lt;em&gt; element to read, "Complete" (but do not modify any other content).
+        Select it by using this &lt;li&gt;'s class.
+        <br>
+        Status: <em>Incomplete</em>
+      </li>
+    </ol>
+  </div>
+  <script>
+    // Step 1 code here…
+    let stepOne = document.querySelector(".test-1");
+    stepOne.className += " success";
+
+    // Step 2 code here…
+    let imageClass = document.querySelector(".vacation-photo");
+    let imageSource = imageClass.getAttribute("data-src");
+    imageClass.setAttribute("src", imageSource);
+
+    // Step 3 code here…
+    let stepThree = document.querySelector(".status-message em");
+    stepThree.textContent = "Complete";
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 9 - Coding Challenge</title>
+    <style>
+      body {
+        background-color: #f2f2f2;
+        color: #333;
+        font-family: Helvetica, sans-serif;
+        line-height: 1.5;
+      }
+      .container {
+        margin: 30px auto;
+        padding: 2rem;
+        max-width: 700px;
+        text-align: center;
+        background-color: white;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        border-radius: 5px;
+      }
+      .container :last-child {
+          margin-bottom: 0;
+      }
+      .color-display {
+        margin: 30px auto 0;
+        width: 300px;
+        height: 300px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Week 7: Colors!</h1>
+      <p>
+        We're using our newfound knowledge of objects to create colors. We're using the RGB (red, green, blue) color scheme. A few example colors to test your code with:
+      </p>
+      <p>
+        black: 0, 0, 0
+        <br>
+        white: 255, 255, 255
+        <br>
+        light blue: 117, 185, 219
+        <br>
+        medium green: 43, 159, 43
+        <br>
+        light purple: 235, 130, 203
+      </p>
+      <p>(Follow the instructions in the comments of this file to get started.)</p>
+      <hr>
+      <p>Fill the box below with color:</p>
+      <div class="color-display"></div>
+    </div>
+    <script src="index.js"></script>
+    <script>
+      /*
+      STEP 1: As per usual, include the "index.js" file _above_ this <script> block.
+
+      Step 2: Follow the instructions inside index.js to build out the "color" object.
+
+      Step 3: Here, use the getters and setters you created in the "color" object in index.js to create colors.
+      As you set a new color, the display box is already configured to match the color you generate.
+
+      /*
+      E.g. To color the box a medium green:
+      
+      set red to 43
+      set green to 159
+      set blue to 43
+      */
+
+      // YOUR CODE HERE
+      
+      color.red = 43;
+      color.green = 159;
+      color.blue = 43;
+      
+
+      
+        
+
+    </script>
+    <script>
+      // DO NOT EDIT THIS
+      const colorDisplay = document.querySelector(".color-display");
+      colorDisplay.style.backgroundColor = 'rgb(' + color.red + ',' + color.green + ',' + color.blue + ')';
+    </script>
+  </body>
+</html>

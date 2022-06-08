@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fizz Buzz - Week 3</title>
+</head>
+
+<body>
+  <script>
+    /*
+    Part 2: FIZZ BUZZ
+
+    Now that you've got the remainder operator (%) down, it's time to play FizzBuzz! This is a game where you count up from a given number (usually 1), but with a few rules:
+    
+    Write the number to the page UNLESS:
+      - the number is divisible by 3. If so, write "fizz" instead
+      - the number is divisible by 5. If so, write "buzz" instead
+      - the number is divisible by 15. If so, write "fizzbuzz" instead
+
+    To complete this assignment, write a function called playFizzBuzz that uses a loop to play the FizzBuzz game. The function should accept two arguments: a starting number and an ending number. These arguments dictate where the game counting starts and ends. Optionally write a "<br>" element after each number or word to make the output more readable.
+
+    To verify your code works, a game starting at 1 and ending at 30 should print output like this:
+    1
+    2
+    fizz
+    4
+    buzz
+    fizz
+    7
+    8
+    fizz
+    buzz
+    11
+    fizz
+    13
+    14
+    fizzbuzz
+    16
+    17
+    fizz
+    19
+    buzz
+    fizz
+    22
+    23
+    fizz
+    buzz
+    26
+    fizz
+    28
+    29
+    fizzbuzz
+    */
+
+    let start = 1;
+    let end = 30;
+
+    function playFizzBuzz(start, end) {
+      for (start; start <= end; start++) {
+        if ((start % 15) == 0) {
+          document.writeln("fizzbuzz");
+          document.writeln("<p>");
+          continue;
+        }
+        else if ((start % 5) == 0) {
+          document.writeln("buzz");
+          document.writeln("<p>");
+          continue;
+        }
+        else if ((start % 3) == 0) {
+          document.writeln("fizz");
+          document.writeln("<p>");
+          continue;
+        }
+        else {
+          document.writeln(start);
+          document.writeln("<p>");
+          continue;
+        }
+      }
+    }
+
+
+    playFizzBuzz(start, end)
+
+  </script>
+</body>
+
+</html>

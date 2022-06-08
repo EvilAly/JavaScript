@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 11 - Coding Challenge</title>
+    <!-- prettier-ignore-start -->
+    <style>body{background-color:#f2f2f2;color:#363636;font-family:Helvetica,sans-serif;line-height:1.5}.container{margin:30px auto;padding:2rem;max-width:700px;text-align:center;background-color:#fff;box-shadow:0 4px 20px rgba(0,0,0,.05);border-radius:5px}.container :last-child{margin-bottom:0}.color-display{margin:30px auto 0;width:300px;height:300px;border:1px solid #000}ol{text-align:left}p{margin-bottom:2em}.data-table{width:100%;text-align:left}.details{text-align:left}</style>
+    <!-- prettier-ignore-end -->
+  </head>
+  <body>
+    <div class="container">
+      <h1>Week 11: JSON</h1>
+      <p>
+        In the table below is a list of a few Marvel superheroes along with their super powers. Use JSON to populate the <code>superheroes</code> object in the &lt;script&gt; element at the bottom of this file with the data from the table. Make your object's structure follow the data structure of the table.
+      </p>
+      <h2>Guidelines</h2>
+      <ul class="details">
+        <li>Each superhero should be represented by <em>their own object</em> within the <code>superheroes</code> "parent" object.</li>
+        <li>Each super power should be a separate string within an array of super powers assigned to their respective superhero. E.g. <code>["Flight", "Super Strength"]</code></li>
+      </ul>
+
+      <h3>Extra Credit: 5 points</h3>
+      <p>
+        Loop through one of the arrays you created in the <code>superheroes</code> object and log each super power to the console.
+      </p>
+
+      <hr>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Super Powers</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Iron Man</td>
+            <td>Flight, Artificial Intelligence, Armored Suit, Super Strength + Durability</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Black Widow</td>
+            <td>Master Fighter, Strength and Agility, Widow's Bite, Master Hacker</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Hulk</td>
+            <td>Superhuman Strength, Long Distance Jumping, Hulk Smash, Durability and Regeneration, Genius Intelligence</td>
+            <td></td>
+          </tr>
+        </tbody>
+        </table>
+    </div>
+    <script>
+      // Populate this object according to the content in the table
+      const superheroes = {
+        "rich": {
+            "name": "Iron Man",
+            "superPowers": ["Flight", "Artificial Intelligence", "Armored Suit", "Super Strength", "Durability"]
+          },
+        "fiesty": {
+            "name": "Black Widow",
+            "superPowers": ["Master Fighter", "Strength and Agility", "Widow's Bite", "Master Hacker"]
+          },
+        "smart": {
+            "name": "Hulk",
+            "superPowers": ["Superhuman Strength", "Long Distance Jumping", "Hulk Smash", "Durability and Regeneration", "Genuis Intelligence"]
+          },
+          
+        
+                      
+      }
+
+      let ironMan = superheroes.rich.superPowers;
+      let blackWidow = superheroes.fiesty.superPowers;
+      let hulk = superheroes.smart.superPowers;
+
+      for (let i =0; i < ironMan.length; i++){
+        console.log(ironMan[i]);
+      }
+
+      for (let i =0; i < blackWidow.length; i++){
+        console.log(blackWidow[i]);
+      }
+
+      for (let i =0; i < hulk.length; i++){
+        console.log(hulk[i]);
+      }   
+      
+    </script>
+  </body>
+</html>

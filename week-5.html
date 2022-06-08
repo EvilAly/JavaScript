@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 5 - Scope and Closures</title>
+  </head>
+  <body>
+    <h2>Part 1:</h2>
+    <script>
+      /*
+        Week 5 - Scope & Closure
+
+        This week has 2 parts. The first is required to earn your 20 points, but the 2nd is extra credit and worth 10 points.
+        Good luck!
+      */
+
+      /**
+       * ===========================
+       * Part 1: REQUIRED - 20 POINTS
+       *
+       * Overview:
+       * Use closure to create a counter function. Every time the enclosed function is invoked,
+       * the counter should increase by one. Print the output of the counter to the page.
+       *
+       * Instructions:
+       *  - Create a parent function that contains a variable that tracks the current counter value. Start it at zero.
+       *  - Create an enclosed (i.e. returned) function that increments the counter whenever it's invoked
+       *      and prints the counter's current value to the page.
+       *  - Outside the parent function, invoke it and capture its return value in a variable.
+       *      (This returned value is what gets invoked to increase your counter's value)
+       */
+
+      // YOUR CODE FOR PART 1 GOES HERE
+      
+      //Parent function that contains counter starting at 0
+      function counterTracker() {
+        let count = 0;
+
+        //Closure that increments counter when invoked
+        function currentValue() {
+          count = count +1;
+          // print counter
+          document.write(count);
+        }
+
+        return currentValue;
+      }
+      
+      //invoke parent function with return to variable
+      let counterValue = counterTracker();
+      counterValue();
+
+    </script>
+    <hr />
+    <h2>Part 2:</h2>
+    <script>
+      /**
+       * ===========================
+       * Part 2: EXTRA CREDIT - 10 POINTS
+       *
+       * Represents a safe with a secret combination
+       *
+       * We're cracking a safe! We have a safe() function with a combination stored inside it,
+       * and in that an enclosed function that we'll use to test against the safe's combination.
+       * Obviously this is an over-simplified example of "security", but if you wanted to keep
+       * details private to outside code, closer can help you do that!
+       *
+       * Follow the instructional comments to walk through setting up the safe() function
+       */
+      function safe() {
+        const secretCombination = "12112020";
+
+        // Create a variable that tracks the attempted combination
+        // YOUR CODE GOES HERE
+        let comboAttempts = 0
+
+        /**
+         * Tests an attempted combination against the real combination. Returns a boolean based on whether or not it passed
+         * @param attempt - The attempted combination to test
+         * @return {Boolean} - Did the attempt match the safe's combination?
+         */
+        function test(attempt) {
+          // YOUR CODE GOES HERE
+          comboAttempts = comboAttempts + 1;
+          if (attempt == ) {
+            let match = true;
+          }
+          else {
+            let match = false;
+          }
+
+          return match;
+        }
+
+        /**
+         * Accepts the next number in the sequence and runs the combination test,
+         *  printing the result of whether or not the combination was correct
+         * @param nextNumber - the next number to add to the attempted combination
+         */
+        return function (nextNumber) {
+          // YOUR CODE GOES HERE
+          
+        };
+
+        return test();
+      }
+
+      // invoke safe() and capture its return to be used for checking a combination
+      let checkingCombo = safe();
+      // YOUR CODE GOES HERE
+       
+
+      // To test your code, invoke safe()'s returned function as many times as required until you get the combination correct
+      /*
+      For example, if you named your function nextNumber and the secret combination was 12112020:
+        nextNumber(12); --> "Not yet…"
+        nextNumber(11); --> "Not yet…"
+        nextNumber(20); --> "Not yet…"
+        nextNumber(20); --> "Open!"
+      */
+    </script>
+  </body>
+</html>

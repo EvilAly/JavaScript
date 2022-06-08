@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 15 - Coding Challenge</title>
+    <!-- prettier-ignore-start -->
+    <style>body{background-color:#f2f2f2;color:#363636;font-family:Helvetica,sans-serif;line-height:1.5}.container{margin:30px auto;padding:2rem;max-width:700px;text-align:center;background-color:#fff;-webkit-box-shadow:0 4px 20px rgba(0,0,0,.05);box-shadow:0 4px 20px rgba(0,0,0,.05);border-radius:5px}.container :last-child{margin-bottom:0}.color-display{margin:30px auto 0;width:300px;height:300px;border:1px solid #000}ol{text-align:left}p{margin-bottom:2em}.details{text-align:left}hr{margin:32px 0}code{font-size:1.1em;padding:.2em .4em;background-color:#eee;border:1px solid #ccc}.message.cloned{font-weight:bold;color:darkorange;}</style>
+    <!-- prettier-ignore-end -->
+  </head>
+  <body>
+    <div class="container">
+      <h1>Week 15: Events</h1>
+
+      <h2>Step 1</h2>
+      <p>Attach a click event handler to the "Make a Copy" button below that does the following:</p>
+      <ol>
+          <li>clones the "Copy Me!" paragraph element</li>
+          <li>adds the class <code>cloned</code> to the new clone you just created</li>
+          <li>appends the newly-created clone to the <code>.message-container</code> element</li>
+      </ol>
+      <p>
+          <em>HINT:</em> Keep scoping in mind while working on this step. You'll need to reference the event handler again in step 2.
+      </p>
+
+      <h2>Step 2</h2>
+      <p>Attach a click event handler to the "Stop It" button below that does the following:</p>
+      <ol>
+          <li>disables the behavior of the button from Step 1</li>
+          <li>changes the text of the Step 1 button to, "Broken"</li>
+      </ol>
+          
+      <hr>
+      <p class='copy-button-container'>
+          <button type='button' class='button'>Make a Copy</button>
+      </p>
+      <p class='stop-button-container'>
+        <button type='button' class='button'>Stop It</button>
+      </p>
+      <div class='message-container'>
+        <p class='message'>Copy Me!</p>
+      </div>
+    </div>
+    <script>
+        // Step 1 code here…
+        let copyButton = document.querySelector(".copy-button-container");
+        let cloneCopy = document.querySelector(".message-container");
+        copyButton.addEventListener("click", toDo, false);
+
+
+        function toDo() {
+          let duplicate = cloneCopy.cloneNode(true);
+          duplicate.classList.add("cloned")
+          cloneCopy.append(duplicate);
+        }
+
+        // Step 2 code here…
+        let stopButton = document.querySelector(".stop-button-container");
+        stopButton.addEventListener("click", stopIt, false);
+
+        function stopIt() {
+          copyButton.removeEventListener("click", toDo, false);
+          copyButton.textContent = "Broken";
+        }
+
+
+
+    </script>
+  </body>
+</html>
